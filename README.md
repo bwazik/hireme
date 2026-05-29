@@ -229,6 +229,13 @@ When Dry-Run is active, all API calls to Gemini and Serper are executed, but **e
 - Always verify your campaign queue logs in Dry-Run mode first.
 - Once you are comfortable with the generated pitches, go to **System Settings** and set `dry_run` to `false` to go live!
 
+### 4. Manual Mode (Highly Recommended & Safest Approach)
+If you prefer complete control and maximum safety, you can operate the pipeline **manually** instead of relying on the automated System Scheduler:
+1. **Trigger Discovery Manually**: Start the scraper/discovery loop manually by clicking the discovery trigger/button in the Filament Admin UI.
+2. **Review Logs Phase-by-Phase**: Monitor the scraping results and logs directly in the admin panel. Examine the discovered companies, crawled websites, and extracted contact details to filter out false positives before moving forward.
+3. **Build the Campaign**: Once the leads are verified, manually create the Campaign and trigger the AI outreach message generation.
+4. **Final Check**: Review the AI-generated subject lines, email bodies, and WhatsApp nudges for absolute quality, then initiate the sending process.
+
 ---
 
 ## 📈 Dashboard & Daily Usage (Filament Panel)
@@ -247,3 +254,13 @@ Log into your Filament panel to control the cockpit:
 - **Human Typing Delay**: AOS includes a human-like delay between WhatsApp messages (60–120 seconds by default, configurable in settings). Do not set this lower as it acts as an anti-ban shield.
 - **Office Hour Guardrails**: The sending worker checks `daily_start_hour` (9 AM) and `daily_end_hour` (10 PM) before firing. If it is outside this window, jobs wait in the queue until business hours resume.
 - **CV Attachment**: Make sure your resume is located at `storage/app/cv/Abdullah_Mohamed_CV.pdf` (or your custom path) so it attaches to outreach emails correctly.
+
+---
+
+## 🤖 Working with AI Coding Assistants (Cursor, Gemini, Copilot)
+
+If you plan to use an AI coding assistant (like Cursor, Gemini, or GitHub Copilot) to help you extend, customize, or maintain this project:
+- **Master Plan Blueprint**: Use **[PLAN.md](file:///PLAN.md)** at the root of the project. It contains the master engineering plans, database schemas, and architectural designs for the entire application.
+- **Phase Guides**: Use the step-by-step documentation files in the **[phases/](file:///phases/)** directory. Each file focuses on a single module (e.g. Scaffolding, Lead Management, AI Generation, Sending Engine) with deep context and code structure hints.
+- *Tip: Simply feed the relevant phase file and the master plan to your AI assistant to give it complete codebase context!*
+
